@@ -15,6 +15,7 @@ const LoginPage = (props: any) => {
                     setEmail(e.target.value)
                 }}/>
             <TextField
+                type="password"
                 fullWidth={true} margin="normal" label="Password" variant="outlined" placeholder="Введите ваш пароль"
                 onChange={(e) => {
                     setPassword(e.target.value)
