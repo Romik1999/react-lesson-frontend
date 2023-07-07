@@ -1,9 +1,9 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import {Button, TextField, Typography} from "@mui/material";
 import {IPropsLogin} from "../../../common/types/auth";
 
 const LoginPage: React.FC<IPropsLogin> = (props: IPropsLogin): JSX.Element => {
-    const {setPassword, setEmail} = props
+    const {setPassword, setEmail, navigate} = props
     return (
         <>
             <Typography variant="h2" fontFamily="Poppins" textAlign="center">Авторизация</Typography>
@@ -28,7 +28,13 @@ const LoginPage: React.FC<IPropsLogin> = (props: IPropsLogin): JSX.Element => {
                 Войти
             </Button>
             <Typography variant="body1" sx={{fontFamily: "Poppins"}}>
-                У вас нет аккаунта? <span className="incitingText">Регистрация</span>
+                У вас нет аккаунта?
+                <span
+                    className="incitingText"
+                    onClick={() => navigate('/register')}
+                >
+                    Регистрация
+                </span>
             </Typography>
         </>
     );

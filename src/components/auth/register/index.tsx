@@ -3,18 +3,21 @@ import {Button, TextField, Typography} from "@mui/material";
 import {IPropsRegister} from "../../../common/types/auth";
 
 const RegisterPage: React.FC<IPropsRegister> = (props: IPropsRegister) => {
-    const {setEmail, setUserName, setFirstName, setPassword, setRepeatPassword} = props
+    const {setEmail, setUserName, setFirstName, setPassword, setRepeatPassword, navigate} = props
     return (
         <>
             <Typography variant="h2" fontFamily="Poppins" textAlign="center">Регистрация</Typography>
-            <Typography variant="body1" marginBottom={3} fontFamily="Poppins" textAlign="center">Введите данные для регистрации</Typography>
+            <Typography variant="body1" marginBottom={3} fontFamily="Poppins" textAlign="center">Введите данные для
+                регистрации</Typography>
             <TextField
                 fullWidth={true}
                 margin="normal"
                 label="Name"
                 variant="outlined"
                 placeholder="Введите ваше имя"
-                onChange={(e)=>{setFirstName(e.target.value)}}
+                onChange={(e) => {
+                    setFirstName(e.target.value)
+                }}
             />
             <TextField
                 fullWidth={true}
@@ -22,7 +25,9 @@ const RegisterPage: React.FC<IPropsRegister> = (props: IPropsRegister) => {
                 label="Username"
                 variant="outlined"
                 placeholder="Введите ваш Username"
-                onChange={(e)=>{setUserName(e.target.value)}}
+                onChange={(e) => {
+                    setUserName(e.target.value)
+                }}
             />
             <TextField
                 fullWidth={true}
@@ -30,7 +35,9 @@ const RegisterPage: React.FC<IPropsRegister> = (props: IPropsRegister) => {
                 label="Email"
                 variant="outlined"
                 placeholder="Введите ваш email"
-                onChange={(e)=>{setEmail(e.target.value)}}
+                onChange={(e) => {
+                    setEmail(e.target.value)
+                }}
             />
             <TextField
                 type="password"
@@ -39,7 +46,9 @@ const RegisterPage: React.FC<IPropsRegister> = (props: IPropsRegister) => {
                 label="Password"
                 variant="outlined"
                 placeholder="Введите ваш пароль"
-                onChange={(e)=>{setPassword(e.target.value)}}
+                onChange={(e) => {
+                    setPassword(e.target.value)
+                }}
             />
             <TextField
                 type="password"
@@ -48,7 +57,9 @@ const RegisterPage: React.FC<IPropsRegister> = (props: IPropsRegister) => {
                 label="Password"
                 variant="outlined"
                 placeholder="Повторите ваш пароль"
-                onChange={(e)=>{setRepeatPassword(e.target.value)}}
+                onChange={(e) => {
+                    setRepeatPassword(e.target.value)
+                }}
             />
             <Button
                 variant="contained"
@@ -57,7 +68,15 @@ const RegisterPage: React.FC<IPropsRegister> = (props: IPropsRegister) => {
             >
                 Регистрация
             </Button>
-            <Typography variant="body1" sx={{fontFamily:"Poppins" }}>У вас есть аккаунт? <span className="incitingText">Авторизация</span></Typography>
+            <Typography variant="body1" sx={{fontFamily: "Poppins"}}>
+                У вас есть аккаунт?
+                <span
+                    className="incitingText"
+                    onClick={() => navigate('/login')}
+                >
+                    Авторизация
+                </span>
+            </Typography>
         </>
     );
 };
