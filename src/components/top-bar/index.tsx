@@ -16,23 +16,10 @@ const TopBarComponent = () => {
     const classes = useStyles()
 
     return (
-        <Box display="flex" justifyContent="space-between" px="32px" py="24px">
+        <Box className={classes.root}>
             <Grid>Welcome Roman</Grid>
-            <Box
-                sx={{
-                    display: 'flex',
-                    columnGap: '10px',
-                    alignItems: 'center'
-                }}
-            >
-                <Grid
-                    sx={{
-                        display: 'flex',
-                        columnGap: '10px',
-                        alignItems: 'center',
-                        borderRight: '1px solid #FFFFFF'
-                    }}
-                >
+            <Box className={classes.right}>
+                <Grid className={classes.iconBlock}>
                     <IconButton onClick={colorMode.toggleColorMode}>
                         {theme.palette.mode === 'dark' ? (<DarkModeIcon/>) : (<LightModeIcon/>)}
                     </IconButton>
@@ -40,17 +27,11 @@ const TopBarComponent = () => {
                         <NotificationsNoneIcon/>
                     </IconButton>
                 </Grid>
-                <Grid
-                    sx={{
-                        display: 'flex',
-                        backgroundColor: `${colors.primary[600]}`,
-                        borderRadius: '8px'
-                    }}
-                >
-                    <IconButton className={classes.root}>
+                <Grid className={classes.searchBlock}>
+                    <IconButton className={classes.searchIcon}>
                         <SearchIcon/>
                     </IconButton>
-                    <InputBase sx={{px: '18px', py: '12px'}} placeholder='Search'/>
+                    <InputBase className={classes.searchInput} placeholder='Search'/>
                 </Grid>
             </Box>
         </Box>
