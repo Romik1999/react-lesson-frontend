@@ -10,13 +10,16 @@ export const useStyles = makeStyles((theme: Theme) => {
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
-                padding: "32px 24px"
+                padding: "20px 24px",
+                backgroundColor: colors.primary.DEFAULT,
+                borderBottom: `1px solid ${colors.borderColor}`,
+                height: "95px",
             },
             iconBlock: {
                 display: 'flex',
                 columnGap: '10px',
                 alignItems: 'center',
-                borderRight: `1px solid ${colors.gray.DEFAULT}`,
+                borderRight: `1px solid ${colors.borderColor}`,
                 paddingRight: '20px'
             },
             right: {

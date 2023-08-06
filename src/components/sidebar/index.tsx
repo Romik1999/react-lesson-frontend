@@ -21,7 +21,6 @@ import {
 import {useLocation, useNavigate} from "react-router-dom";
 import FlexBetween from "../flex-between";
 import {navMenu} from "../../common/moks/navigate";
-import {tokens} from "../../theme";
 import Logo from "../../assets/images/sidebar/logo.svg";
 
 const SidebarComponent = (props: any) => {
@@ -31,7 +30,6 @@ const SidebarComponent = (props: any) => {
     const {pathname} = useLocation()
     const navigate = useNavigate()
     const theme = useTheme()
-    const colors = tokens(theme.palette.mode)
 
     useEffect(() => {
         setActive(pathname.substring(1))
@@ -70,14 +68,14 @@ const SidebarComponent = (props: any) => {
                         }
                     }}
                 >
-                    <Box width='100' sx={{borderBottom: `1px solid ${colors.borderColor}`}}>
+                    <Box className={classes.navBlock}>
                         <Box>
                             <FlexBetween>
                                 <Box className={classes.brand}>
                                     <img src={Logo} alt="Logo image"/>
                                     <Typography
                                         variant="h1"
-                                        color={theme.palette.mode === 'dark' ? colors.white.DEFAULT : colors.black.DEFAULT}
+                                        className={classes.brandTitle}
                                     >
                                         Demo
                                     </Typography>
@@ -89,19 +87,17 @@ const SidebarComponent = (props: any) => {
                                 )}
                             </FlexBetween>
                         </Box>
-                        <List
-                            sx={{marginBottom: "55px"}}
-                        >
+                        <List className={classes.navList}>
                             {renderNavMenu}
                         </List>
                     </Box>
                     <Box width='100%'>
                         <List>
                             <ListItem>
-                                <ListItemButton
-                                    className={classes.navItem}
-                                >
-                                    <ListItemIcon><LogoutOutlined/></ListItemIcon>
+                                <ListItemButton className={classes.navItem}>
+                                    <ListItemIcon>
+                                        <LogoutOutlined/>
+                                    </ListItemIcon>
                                     <ListItemText>
                                         <Typography>Logout</Typography>
                                     </ListItemText>

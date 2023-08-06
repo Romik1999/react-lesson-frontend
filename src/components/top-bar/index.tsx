@@ -4,14 +4,12 @@ import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
-import {ColorModeContext, tokens} from "../../theme";
+import {ColorModeContext} from "../../theme";
 import {useStyles} from "./styles";
-
 
 const TopBarComponent = () => {
     // const {user} = useAppSelector(state => state.auth.user)
     const theme = useTheme()
-    const colors = tokens(theme.palette.mode)
     const colorMode: any = useContext(ColorModeContext)
     const classes = useStyles()
 
