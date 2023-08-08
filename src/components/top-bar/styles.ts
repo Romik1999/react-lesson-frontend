@@ -17,7 +17,8 @@ export const useStyles = makeStyles((theme: Theme) => {
                 padding: "24px",
             },
             menuIcon:{
-
+                cursor: "pointer",
+                marginRight: '10px',
             },
             iconBlock: {
                 display: 'flex',
