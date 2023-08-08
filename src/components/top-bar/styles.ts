@@ -7,13 +7,18 @@ export const useStyles = makeStyles((theme: Theme) => {
     return (
         {
             root: {
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                padding: "20px 24px",
-                backgroundColor: colors.primary.DEFAULT,
+                position: "static",
+                background: `${colors.primary.DEFAULT} !important`,
                 borderBottom: `1px solid ${colors.borderColor}`,
-                height: "95px",
+                boxShadow: 'none !important',
+            },
+            toolbar:{
+                justifyContent: "space-between",
+                padding: "24px",
+            },
+            menuIcon:{
+                cursor: "pointer",
+                marginRight: '10px',
             },
             iconBlock: {
                 display: 'flex',
